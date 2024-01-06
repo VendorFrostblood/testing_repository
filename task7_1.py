@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 ###VF
-##UPD // 06.01.2024 // After further testing this code is considered not viable for the task provided, due to my own hands growing from
-##the wrong place. Code reworking in progress...
 import random
 
 
@@ -22,9 +20,8 @@ def get_ladder(lad_start, lad_end, lad_random):
     for i in range(lad_random, lad_end+1):   ## From here and on to line 26 is a bit of magic dust, or as a normal person would call it: "what the..."
         a.append('*' * (i))
     for i in range(lad_start, lad_random+1):
-        b.append('*' * (lad_random + 1 - i))
+        b.append('*' * (i))
     a = a[::-1]
-    b = b[::-1]
     for j in b:
         a.append(j)
     for k in a:

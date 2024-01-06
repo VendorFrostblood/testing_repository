@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 ###VF
-
+##UPD // 06.01.2024 // After further testing this code is considered not viable for the task provided, due to my own hands growing from
+##the wrong place. Code reworking in progress...
 import random
 
 

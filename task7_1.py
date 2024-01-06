@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 ###VF
+
 import random
 
 
@@ -13,20 +14,21 @@ def check_input(chk):
         return False
 
 
-def get_ladder(lad_start, lad_end, lad_random):
+def get_ladder(lad_args):
     a = []
     b = []
     fin = ""
-    for i in range(lad_random, lad_end+1):   ## From here and on to line 26 is a bit of magic dust, or as a normal person would call it: "what the..."
+    for i in range(lad_args[2], lad_args[1]+1):
         a.append('*' * (i))
-    for i in range(lad_start, lad_random+1):
+    for i in range(lad_args[0], lad_args[2]+1):
         b.append('*' * (i))
     a = a[::-1]
     for j in b:
         a.append(j)
     for k in a:
         fin += k + "\r\n"
-    return fin
+    #return fin.rstrip()
+    return a
 
 
 def main(arr):  ## Input the array matrix / Program start
@@ -34,7 +36,8 @@ def main(arr):  ## Input the array matrix / Program start
         if check_input(i):
             foo = i
             break
-    ladder = get_ladder(foo[0], foo[1], random.randint(foo[0], foo[1]))
-    print(ladder.rstrip())
+    ladder = get_ladder([foo[0], foo[1], random.randint(foo[0], foo[1])])
+    #print(ladder)
+    print("\r\n".join(ladder))
     
     
